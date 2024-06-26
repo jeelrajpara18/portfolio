@@ -1,0 +1,87 @@
+@import "../../app.scss";
+
+.skills-container{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+
+
+    .skills-container h2{
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 3.5rem;
+    }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+  
+            @include mobile {
+              font-size: 36px;
+            }
+          }
+
+
+    .skills-content{
+        display: flex;
+        align-items: flex-start;
+        gap: 3rem;
+        // width: 700px;
+        margin-top: 2rem;
+
+        @include mobile{
+            flex-direction: column-reverse;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+            padding-left: 3rem;
+        }
+
+        @include miniMobile{
+            padding-left: -20px;
+        }
+
+        // @include tablet{
+        //     flex-direction: column-reverse;
+        // }
+    }
+
+    .skills{
+        flex: 1;
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(2 , 1fr);
+    }
+
+    .skills-info{
+        @include mobile{
+            width: 100%;
+        }
+
+        @include miniMobile {
+            padding-left: -20px;
+        }
+    }
+}
+.skills-container::after,.skills-container::before{
+    content: "";
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    background: #7c66e3;
+    position: absolute;
+    z-index: -1;
+    filter: blur(200px);
+}
+
+.skills-container::after{
+    top: -2rem;
+    left: -5rem;
+}
+
+.skills-container::before{
+    background: #9351b9;
+    bottom: -10;
+    right: 0;
+}
