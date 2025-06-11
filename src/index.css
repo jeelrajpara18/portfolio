@@ -63,6 +63,7 @@ body {
   color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-image: linear-gradient(to right, rgba(14, 252, 182, 0.05) 1px, transparent 1px), linear-gradient(rgba(14, 252, 182, 0.05) 1px, transparent 1px); background-size: 30px 30px;
 }
 
 .c-space {

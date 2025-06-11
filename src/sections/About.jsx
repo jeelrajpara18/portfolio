@@ -2,8 +2,8 @@
 import ElasticComponent from "@/components/ElasticComponent";
 import { BentoCard, BentoGrid } from "../components/magicui/bento-grid";
 import { Frameworks } from "../components/Frameworks";
-import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 const floatingTechs = [
   { name: "React", x: "10%", y: "15%", delay: 0 },
@@ -71,15 +71,16 @@ const features = [
     ),
   },
   {
-    className:
-      "col-span-3 lg:col-span-1 bg-transparent relative",
+    className: "col-span-3 lg:col-span-1 bg-transparent relative",
     background: <ElasticComponent />,
   },
   {
     className: "col-span-3 lg:col-span-1 bg-transparent",
     background: (
       <div className="px-6 py-4">
-        <div className="text-mono text-yellow-300 text-2xl">Education</div>
+        <div className="text-mono text-yellow-300 text-2xl font-semibold">
+          Education
+        </div>
         <div className="py-5">
           <ul className="space-y-5 text-primary-foreground/70">
             <li className="border-l-2 border-pink-700 pl-4 py-1 hover:border-pink-900 transition-colors">
@@ -106,7 +107,7 @@ const features = [
     background: (
       <>
         <div className="overflow-hidden h-full">
-          <Frameworks/>
+          <Frameworks />
         </div>
       </>
     ),
@@ -116,7 +117,14 @@ const features = [
 export default function About() {
   return (
     <section
-      className="min-h-screen bg-gradient-to-b from-storm via-slate-900 to-indigo relative overflow-hidden  "
+      className="min-h-screen bg-gradient-to-b from-storm via-slate-900 to-indigo relative overflow-hidden"
+      style={{
+        backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          `,
+        backgroundSize: "20px 20px",
+      }}
       id="about"
     >
       <div className="absolute inset-0">
@@ -155,12 +163,20 @@ export default function About() {
         </motion.div>
       ))}
       <div className="max-w-7xl mx-auto relative z-20 px-4 py-20">
-      <div className="text-heading">About Me</div>
-      <BentoGrid>
-        {features.map((feature, idx) => (
-          <BentoCard key={idx} {...feature} />
-        ))}
-      </BentoGrid>
+        <motion.div
+          className="text-heading"
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: 10, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          About Me ✨
+        </motion.div>
+        <BentoGrid>
+          {features.map((feature, idx) => (
+            <BentoCard key={idx} {...feature} />
+          ))}
+        </BentoGrid>
       </div>
     </section>
   );

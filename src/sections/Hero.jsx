@@ -1,49 +1,31 @@
-import React from 'react'
-import HeroText from '../components/HeroText'
-import ParallaxBackground from '../components/parallaxBackground'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Astronaut } from '../components/Astrounaut'
-import { useMediaQuery } from "react-responsive";
-import { Float } from "@react-three/drei";
-import { easing } from "maath";
-import { Suspense } from "react";
-import { OrbitControls } from '@react-three/drei'
-import Loader from '../components/Loader'
+/* eslint-disable no-unused-vars */
+import { motion } from "framer-motion";
 
-function Hero() {
-const isMobile = useMediaQuery({ maxWidth: 853 });
+import { styles } from "../styles";
+import  ComputersCanvas  from "../components/Astrounaut";
+import HeroText from "@/components/HeroText";
+
+const Hero = () => {
   return (
-    <section className='flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden'>
-        <HeroText/>
-        <ParallaxBackground/>
-         <figure
-        className="absolute inset-0"
-        style={{ width: "100vw", height: "100vh" }}
+    <section className={`relative w-full h-screen mx-auto`}>
+      <div
+        className={`absolute inset-0 top-[10px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <Canvas camera={{ position: [0, 1, 3] }}>
-          <Suspense fallback={<Loader />}>
-            <Float>
-              <Astronaut
-                scale={isMobile && 0.23}
-                position={isMobile && [0, -1.5, 0]}
-              />
-              {/* <OrbitControls/> */}
-            </Float>
-            <Rig />
-          </Suspense>
-        </Canvas>
-      </figure>
+        {/* <div>
+          <h1 className={` text-white`}>
+            Hi, I'm <span className='text-[#915EFF]'>Jeel Rajpara</span>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I develop 3D visuals, user <br className='sm:block hidden' />
+            interfaces and web applications
+          </p>
+        </div> */}
+        <HeroText/>
+      </div>
+
+      <ComputersCanvas />
     </section>
-  )
-}
-function Rig() {
-  return useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
-      0.5,
-      delta
-    );
-  });
-}
-export default Hero
+  );
+};
+
+export default Hero;  

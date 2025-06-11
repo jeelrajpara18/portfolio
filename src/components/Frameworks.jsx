@@ -47,8 +47,8 @@ export function Frameworks() {
 
   return (
     <Card className="bg-transparent border-slate-700/50 border-b-0 backdrop-blur-sm h-full">
-      <CardHeader className="pb-4">
-        <CardTitle className="text-yellow-300 text-xl font-semibold">Tech Stack</CardTitle>
+      <CardHeader className="px-6 py-4">
+        <CardTitle className="text-mono text-yellow-300 text-2xl">Tech Stack</CardTitle>
         <p className="text-slate-300 text-sm leading-relaxed">
           I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
           applications

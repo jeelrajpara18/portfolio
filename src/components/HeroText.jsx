@@ -1,105 +1,102 @@
 /* eslint-disable no-unused-vars */
-import { FlipWords } from "./FlipWords";
-import { motion } from "motion/react";
+"use client"
 
-const HeroText = () => {
-    const words = ["Scalable", "Modern", "Interactive", "Responsive", "Creative"]
+import { motion } from "framer-motion"
+import {FlipWords} from "./FlipWords"
+
+export default function HeroText() {
+  const words = ["Scalable", "Modern", "Interactive", "Responsive", "Creative"]
+
   const variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }
+
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
+    <div className="text-white mt-5">
       {/* Desktop View */}
-      <div className="flex-col hidden md:flex c-space">
+      <div className="hidden lg:block space-y-2">
         <motion.h1
-          className="text-4xl font-medium mb-3"
+          className="text-5xl font-medium"
           variants={variants}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
           Hi I'm Jeel Rajpara
         </motion.h1>
-        <div className="flex flex-col items-start">
-          <div className="flex mb-3">
-            <motion.p
+
+        <div className="space-y-2">
+          <div className="flex items-center gap-4">
+            <motion.span
               className="text-5xl font-medium text-neutral-300"
               variants={variants}
               initial="hidden"
               animate="visible"
-              transition={{ delay: 1.2 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
             >
               I build
-            </motion.p>
+            </motion.span>
             <motion.div
               variants={variants}
               initial="hidden"
               animate="visible"
-              transition={{ delay: 1.5 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <FlipWords
-                words={words}
-                className="font-black text-white text-5xl"
-              />
+              <FlipWords words={words} className="font-black text-white text-5xl" />
             </motion.div>
           </div>
+
           <motion.p
-            className="text-4xl font-medium text-neutral-300"
+            className="text-5xl font-medium text-neutral-300"
             variants={variants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 1.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             Web Experiences
           </motion.p>
         </div>
       </div>
+
       {/* Mobile View */}
-      <div className="flex- flex-col space-y-6 md:hidden">
-        <motion.p
+      <div className="lg:hidden text-center">
+        <motion.h1
           className="text-4xl font-medium"
           variants={variants}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Hi,I'm Jeel Rajpara
-        </motion.p>
-        <div>
+          Hi, I'm Jeel Rajpara
+        </motion.h1>
+
+        <div className="space-y-4">
           <motion.p
             className="text-5xl font-black text-neutral-300"
             variants={variants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Building
           </motion.p>
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.5 }}
-          >
-            <FlipWords
-              words={words}
-              className="font-bold text-white text-5xl"
-            />
+
+          <motion.div variants={variants} initial="hidden" animate="visible" transition={{ delay: 0.6, duration: 0.8 }}>
+            <FlipWords words={words} className="font-bold text-white text-5xl" />
           </motion.div>
+
           <motion.p
-            className="text-4xl font-black text-neutral300"
+            className="text-4xl font-black text-neutral-300"
             variants={variants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 1.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             Web Experiences
           </motion.p>
         </div>
       </div>
     </div>
-  );
-};
-
-export default HeroText;
+  )
+}
