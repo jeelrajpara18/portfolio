@@ -1,7 +1,7 @@
 import gsap from 'gsap';
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
-const Cursor = () => {
+function CursorNew() {
   useEffect(() => {
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
@@ -29,4 +29,5 @@ const Cursor = () => {
   );
 };
 
-export default Cursor;
+
+export default CursorNew
