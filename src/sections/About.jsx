@@ -164,7 +164,7 @@ export default function About() {
       ))}
       <div className="max-w-7xl mx-auto relative z-20 px-4 py-20">
         <motion.div
-          className="text-heading"
+          className="text-heading font-mono"
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: 10, opacity: 1 }}
           transition={{ duration: 1 }}

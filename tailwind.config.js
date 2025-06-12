@@ -12,6 +12,7 @@ export default {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+			pink : "rgb(87,21,73)",
   			midnight: '#06091f',
   			navy: '#161a31',
   			indigo: '#1f1e39',

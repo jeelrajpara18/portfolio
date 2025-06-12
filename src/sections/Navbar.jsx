@@ -23,13 +23,13 @@ export default function NavbarDemo() {
       link: "#about",
     },
     {
-      name: "Work",
+      name: "Projects",
+      link: "#project",
+    },
+    {
+      name: "Work Experience",
       link: "#work",
     },
-    // {
-    //     name : "Contact",
-    //     link : "#contact"
-    // }
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,11 +40,11 @@ export default function NavbarDemo() {
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
-          <NavItems items={navItems}/>
+          <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <NavbarButton variant="primary">
-                <a href="#contact">Contact Me</a>
+            <NavbarButton variant="primary" href="#contact">
+              Contact Me
             </NavbarButton>
           </div>
         </NavBody>
@@ -55,16 +55,21 @@ export default function NavbarDemo() {
             <NavbarLogo />
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
           </MobileNavHeader>
 
-          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-white">
+                className="relative text-white"
+              >
                 <span className="block">{item.name}</span>
               </a>
             ))}
@@ -78,8 +83,10 @@ export default function NavbarDemo() {
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
-                className="w-full">
-                <a href="#contact">Contact Me</a>
+                className="w-full"
+                href="#contact"
+              >
+                Contact Me
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -89,4 +96,3 @@ export default function NavbarDemo() {
     </div>
   );
 }
-
