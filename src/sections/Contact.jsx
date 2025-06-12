@@ -2,10 +2,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
 function Contact() {
@@ -128,10 +124,10 @@ function Contact() {
               {/* Name and Email Row */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-white font-medium">
+                  <label htmlFor="name" className="text-white font-medium">
                     Name
-                  </Label>
-                  <Input
+                  </label>
+                  <input
                     id="name"
                     name="name"
                     autoComplete="name"
@@ -144,10 +140,10 @@ function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white font-medium">
+                  <label htmlFor="email" className="text-white font-medium">
                     Email
-                  </Label>
-                  <Input
+                  </label>
+                  <input
                     id="email"
                     type="email"
                     name="email"
@@ -162,10 +158,10 @@ function Contact() {
 
               {/* Subject */}
               <div className="space-y-2">
-                <Label htmlFor="subject" className="text-white font-medium">
+                <label htmlFor="subject" className="text-white font-medium">
                   Subject
-                </Label>
-                <Input
+                </label>
+                <input
                   id="subject"
                   type="text"
                   name="subject"
@@ -178,10 +174,10 @@ function Contact() {
 
               {/* Message */}
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-white font-medium">
+                <label htmlFor="message" className="text-white font-medium">
                   Message
-                </Label>
-                <Textarea
+                </label>
+                <textarea
                   id="message"
                   name="message"
                   value={formData.message}
@@ -192,13 +188,13 @@ function Contact() {
                 />
               </div>
 
-              {/* Submit Button */}
-              <Button
+              {/* Submit button */}
+              <button
                 type="submit"
                 className="w-full bg-teal-600 hover:bg-teal-500 text-gray-900 font-semibold h-12 text-lg transition-colors"
               >
                 {!isLoading ? "Send" : "Sending..."}
-              </Button>
+              </button>
             </form>
           </div>
         </div>
