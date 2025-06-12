@@ -18,7 +18,7 @@ function Contact() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-   const showAlertMessage = (type, message) => {
+  const showAlertMessage = (type, message) => {
     setAlertType(type);
     setAlertMessage(message);
     setShowAlert(true);
@@ -45,7 +45,7 @@ function Contact() {
         "IPoP18pFv3efjnQYt"
       );
       setIsLoading(false);
-      setFormData({ name: "", email: "", message: "" , subject : ""});
+      setFormData({ name: "", email: "", message: "", subject: "" });
       showAlertMessage("success", "You message has been sent!");
     } catch (error) {
       setIsLoading(false);
@@ -58,7 +58,7 @@ function Contact() {
       id="contact"
       className="max-w-7xl mx-auto relative z-20 px-4 py-20"
     >
-        {showAlert && <Alert type={alertType} text={alertMessage} />}
+      {showAlert && <Alert type={alertType} text={alertMessage} />}
       <motion.div
         className="text-heading font-mono"
         initial={{ x: 0, opacity: 0 }}
@@ -119,46 +119,59 @@ function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-slate-800/50 border border-blue-900/50 rounded-xl p-8 shadow-lg shadow-blue-500/20">
+          <motion.div
+            className="bg-slate-800/30 border border-blue-900/30 rounded-xl p-8 shadow-lg shadow-blue-500/10 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Name and Email Row */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-white font-medium">
+                  <label
+                    htmlFor="name"
+                    className="text-white font-medium block"
+                  >
                     Name
                   </label>
                   <input
                     id="name"
                     name="name"
-                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
                     type="text"
                     placeholder="Your name"
-                    className=" h-12 border bg-pink placeholder:text-neutral-400 border-transparent focus:border-blue-500/20 focus:outline-none transition"
+                    className="h-12 w-full bg-pink border-none rounded-md px-4 text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-900/50 focus:ring-offset-0 backdrop-blur-sm"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-white font-medium">
+                  <label
+                    htmlFor="email"
+                    className="text-white font-medium block"
+                  >
                     Email
                   </label>
                   <input
                     id="email"
                     type="email"
                     name="email"
-                    autoComplete="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                     placeholder="your.email@example.com"
-                    className="h-12 border bg-pink placeholder:text-neutral-400 border-transparent focus:border-blue-500/20 focus:outline-none transition"
+                    className="h-12 w-full bg-pink border-none rounded-md px-4 text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-900/50 focus:ring-offset-0 backdrop-blur-sm"
                   />
                 </div>
               </div>
 
               {/* Subject */}
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-white font-medium">
+                <label
+                  htmlFor="subject"
+                  className="text-white font-medium block"
+                >
                   Subject
                 </label>
                 <input
@@ -168,13 +181,16 @@ function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="How can I help you?"
-                  className="h-12 border bg-pink placeholder:text-neutral-400 border-transparent focus:border-blue-500/20 focus:outline-none transition"
+                  className="h-12 w-full bg-pink border-none rounded-md px-4 text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-900/50 focus:ring-offset-0 backdrop-blur-sm"
                 />
               </div>
 
               {/* Message */}
               <div className="space-y-2">
-                <label htmlFor="message" className="text-white font-medium">
+                <label
+                  htmlFor="message"
+                  className="text-white font-medium block"
+                >
                   Message
                 </label>
                 <textarea
@@ -184,19 +200,21 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Your message here..."
                   rows={6}
-                  className="h-12 border bg-pink placeholder:text-neutral-400 border-transparent focus:border-blue-500/20 focus:outline-none transition"
+                  className="w-full bg-pink border-none rounded-md p-4 text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-red-900/50 focus:ring-offset-0 backdrop-blur-sm resize-none"
                 />
               </div>
 
               {/* Submit button */}
               <button
                 type="submit"
-                className="w-full bg-teal-600 hover:bg-teal-500 text-gray-900 font-semibold h-12 text-lg transition-colors"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-slate-900 font-semibold h-12 text-lg transition-all duration-300 shadow-lg shadow-teal-500/25 rounded-md flex items-center justify-center"
               >
-                {!isLoading ? "Send" : "Sending..."}
+                <Send className="w-4 h-4 mr-2" />
+                {isLoading ? "Sending..." : "Send"}
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
