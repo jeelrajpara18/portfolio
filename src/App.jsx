@@ -10,8 +10,8 @@ import Projects from "./sections/Projects";
 function App() {
   return (
     <>
-      <div className="font-mono container">
-        <CursorNew/>
+      <div className="font-mono container overflow-hidden">
+        {/* <CursorNew/> */}
         <NavbarDemo/>
         <Hero/>
         <About/>

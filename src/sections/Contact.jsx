@@ -73,7 +73,7 @@ function Contact() {
           {/* Contact Information */}
           <div className="space-y-6">
             {/* Email Card */}
-            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-6 shadow-lg shadow-blue-500/20">
+            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-2 md:p-6 shadow-lg shadow-blue-500/20">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-teal-400/20 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-teal-400" />
@@ -88,7 +88,7 @@ function Contact() {
             </div>
 
             {/* Phone Card */}
-            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-6 shadow-lg shadow-blue-500/20">
+            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-2 md:p-6 shadow-lg shadow-blue-500/20">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-teal-400/20 rounded-lg flex items-center justify-center">
                   <Phone className="w-6 h-6 text-teal-400" />
@@ -103,7 +103,7 @@ function Contact() {
             </div>
 
             {/* Location Card */}
-            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-6 shadow-lg shadow-blue-500/20">
+            <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg  p-2 md:p-6 shadow-lg shadow-blue-500/20">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-teal-400/20 rounded-lg flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-teal-400" />

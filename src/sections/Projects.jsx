@@ -17,7 +17,7 @@ const Projects = () => {
     <section
     id="project"
       onMouseMove={handleMouseMove}
-      className="max-w-7xl mx-auto relative z-20 px-4 py-20"
+      className="max-w-7xl mx-auto relative z-20 md:px-4 md:py-20 px-2 overflow-hidden"
     >
        <motion.div
           className="text-heading font-mono"
