@@ -11,13 +11,13 @@ function App() {
   return (
     <>
       <div className="font-mono container">
-        {/* <CursorNew/> */}
+        <CursorNew/>
         <NavbarDemo/>
         <Hero/>
         <About/>
         <Projects/>
-        <Experiences/>
-        <Contact/>
+        {/* <Experiences/> */}
+        {/* <Contact/> */}
       </div>
     </>
   );
