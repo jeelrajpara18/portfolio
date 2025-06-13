@@ -14,13 +14,17 @@ const Project = ({
   return (
     <>
       <div
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0 "
-        onMouseEnter={() => setPreview(image)}
-        onMouseLeave={() => setPreview(null)}
+        className="font-normal flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
+        onMouseEnter={() => {
+          if (window.innerWidth > 640) setPreview(image); // Tailwind 'sm' breakpoint
+        }}
+        onMouseLeave={() => {
+          if (window.innerWidth > 640) setPreview(null);
+        }}
       >
         <div>
           <p className="text-2xl">{title}</p>
-          <div className="flex gap-5 mt-2 text-yellow-300">
+          <div className="flex gap-5 mt-2 flex-wrap text-yellow-300">
             {tags.map((tag) => (
               <span key={tag.id}>{tag.name}</span>
             ))}

@@ -43,7 +43,7 @@ export default function NavbarDemo() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
-            <NavbarButton variant="primary" href="#contact">
+            <NavbarButton variant="primary" href="#contact" className="bg-white text-black">
               Contact Me
             </NavbarButton>
           </div>
@@ -83,7 +83,7 @@ export default function NavbarDemo() {
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
-                className="w-full"
+                className="w-full bg-white"
                 href="#contact"
               >
                 Contact Me

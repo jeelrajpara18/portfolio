@@ -71,7 +71,13 @@ function Contact() {
       <div>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-5">
           {/* Contact Information */}
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 , delay: 0.4}}
+            viewport={{ once: true }}
+          >
             {/* Email Card */}
             <div className="bg-slate-800/50 border border-blue-900/50 rounded-lg p-2 md:p-6 shadow-lg shadow-blue-500/20">
               <div className="flex items-center space-x-4">
@@ -116,14 +122,15 @@ function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
           <motion.div
             className="bg-slate-800/30 border border-blue-900/30 rounded-xl p-8 shadow-lg shadow-blue-500/10 backdrop-blur-sm"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            viewport={{once : true}}
           >
             <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Name and Email Row */}
