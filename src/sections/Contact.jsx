@@ -66,7 +66,7 @@ function Contact() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        Get in touch
+        Get in touch 📭
       </motion.div>
       <div>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-5">

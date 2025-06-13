@@ -26,7 +26,7 @@ const Projects = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          Projects
+          Projects 💻
         </motion.div>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
       {myProjects.map((project) => (

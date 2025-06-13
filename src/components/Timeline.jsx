@@ -32,7 +32,7 @@ export const Timeline = ({ data }) => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          Work Experience
+          Work Experience 💼
         </motion.div>
       <motion.div ref={ref} className="relative pb-20" initial={{ x: -20, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
