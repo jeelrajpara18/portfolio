@@ -172,11 +172,16 @@ export default function About() {
         >
           About Me ✨
         </motion.div>
+        <motion.div initial={{ x: -20, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}>
         <BentoGrid>
           {features.map((feature, idx) => (
             <BentoCard key={idx} {...feature} />
           ))}
         </BentoGrid>
+        </motion.div>
       </div>
     </section>
   );

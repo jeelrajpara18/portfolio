@@ -34,7 +34,10 @@ export const Timeline = ({ data }) => {
         >
           Work Experience
         </motion.div>
-      <div ref={ref} className="relative pb-20">
+      <motion.div ref={ref} className="relative pb-20" initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 , delay: 0.4}}
+            viewport={{ once: true }}>
         {data.map((item, index) => (
           <div
             key={index}
@@ -78,7 +81,7 @@ export const Timeline = ({ data }) => {
             className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-lavender/50 to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
